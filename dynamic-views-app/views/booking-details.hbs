@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My first view</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Detalles de tu reserva</h1>
+    <p>Nombre: {{name}} {{lastName}}</p>
+    <p>Bootcamp: {{{bootcamp}}} en el campus de {{campus}}</p>
+
+    <hr>
+
+    <h5>Campus {{campus}}</h5>
+
+    {{#with address}}
+    <p>{{street}}, ({{code}})</p>
+    {{/with}}
+
+    <hr>
+
+    {{#if teacher}}
+    <p>Tu profesor/a es: {{teacher}}</p>
+    {{else}}
+    <p>Profesor/a pendiente de asignación</p>
+    {{/if}}
+
+    <hr>
+
+    <h2>Detalles de pago</h2>
+
+    <p>El precio del servicio es de {{price}}</p>
+
+    {{#unless payed}}
+    <p><strong>Te rogamos procedas a abonar el pago ASAP</strong></p>
+    {{/unless}}
+
+    <hr>
+
+    <h2>Materias</h2>
+
+    <ul>
+        {{#each subjects}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+
+
+</body>
+
+</html>
