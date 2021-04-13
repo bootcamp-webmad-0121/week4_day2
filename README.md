@@ -35,6 +35,9 @@
 - El módulo global Nodemon atiende a los cambios en un archivo, siendo iniciado mediante:
   - `nodemon`: escucha los cambios sobre el archivo indicado como *entry point* (propiedad `main`de `package.json`).
   - `nodemon`*`nombre_archivo`*: escucha los cambios realizados en el archivo indicado.
+  ````javascript
+  app.get('/', (req, res) => res.render('nombre-vista'))
+  ````
   
 ## Main points: objeto response
 - El objeto `response` dispone de tres métodos para mostrar información en el cliente:
@@ -64,11 +67,9 @@
   * Registrar su directorio a través de `hbs.registerPartials(path)`
   * Incluir los parciales (sin guiones medios en el nombre) en el directorio registrado (`views/partials`)
 - Un partial puede ser incluido en un hbs mediante al sintaxis `{{> partialName}}`
-- Puede recibir datos tras el nombre: `{{> partialName this}}`
 
 
 ## Apuntes finales
 
 - El comando `nodemon -e js,hbs,css app.js` levanta Nodemon con alcance de parciales.
-- La propiedad `scripts` del `package.json` permite crear *shorthands* para comandos extensos.
 
